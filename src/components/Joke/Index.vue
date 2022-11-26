@@ -1,7 +1,9 @@
 <template>
   <main class="text-center">
-    <p>{{ joketext }}</p>
-    <button class="btn btn-primary" @click="getJoke">Get Joke</button>
+    <p id="joke-text">{{ joketext }}</p>
+    <button id="button-get-joke" class="btn btn-primary" @click="getJoke">
+      Get Joke
+    </button>
   </main>
 </template>
 
@@ -13,8 +15,16 @@ export default {
     },
   },
   methods: {
-    getJoke() {
-      window.alert("Get Joke");
+    async getJoke() {
+      window.console.log("Get Joke");
+      const responseText = document.getElementById("joke-text");
+
+      const response = await fetch("https://serverless-functions-cn-jokes.netlify.app/.netlify/functions/get-jokes")
+                              .then(response => response.json())
+                              .catch(e => console.log(e));
+
+      responseText.innerText = response.data.value;
+
     },
   },
 };
