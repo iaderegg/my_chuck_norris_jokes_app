@@ -5,9 +5,7 @@
     </template>
 
     <template #joke>
-      <Joke
-        :joketext="'Chuck Norris always hits the G-spot with mathematical precision.'"
-      />
+      <Joke :joketext="'Chuck Norris always hits the G-spot with mathematical precision.'" />
     </template>
   </AppLayout>
 </template>
