@@ -2,11 +2,14 @@
   <div class="header">
     <slot name="header"></slot>
   </div>
+  <div class="joke">
+    <slot name="joke"></slot>
+  </div>
 </template>
 
 <style scoped>
 .header,
-.resume,
+.joke,
 .movements {
   display: flex;
   justify-content: space-around;
@@ -18,7 +21,7 @@
   position: fixed;
   width: 100vw;
 }
-.resume {
+.joke {
   min-height: 100vh;
 }
 .movements {
