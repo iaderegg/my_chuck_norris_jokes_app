@@ -26,6 +26,7 @@
 <script>
 import { ref } from "vue";
 import { supabase } from "../supabase";
+import router from "../router";
 
 export default {
   setup() {
@@ -40,6 +41,7 @@ export default {
           password: password.value,
         });
         if (error) throw error;
+        router.push("/");
       } catch (error) {
         alert(error.error_description || error.message);
       }

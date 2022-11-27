@@ -1,11 +1,48 @@
 <template>
-  <header>
-    <img @click="reload" src="@/assets/logo.png" alt="Logo" />
-    <h1>My <span>Chuck Norris</span> Jokes App</h1>
-    <span>
-      <button class="btn btn-danger" @click="signOut">Sign Out</button>
-    </span>
-  </header>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img
+          @click="reload"
+          src="@/assets/logo.png"
+          alt="Logo"
+          class="navbar-brand"
+        />
+        My <span>Chuck Norris</span> Jokes App
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav m-3">
+          <li class="nav-item">
+            <router-link class="nav-link active" aria-current="page" to="/">
+              Get Jokes
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              class="nav-link active"
+              aria-current="page"
+              to="/my-jokes"
+            >
+              My Jokes
+            </router-link>
+          </li>
+        </ul>
+        <button class="btn btn-danger" @click="signOut">Sign out</button>
+      </div>
+    </div>
+  </nav>
+  <router-view></router-view>
 </template>
 
 <script>
@@ -34,22 +71,3 @@ export default {
 };
 </script>
 
-<style scoped>
-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100vw;
-}
-img,
-span {
-  width: 48px;
-}
-h1 {
-  font-size: 1.4rem;
-  color: var(--brand-yellow);
-}
-h1 span {
-  color: var(--brand-brown);
-}
-</style>
