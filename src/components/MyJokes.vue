@@ -5,7 +5,12 @@
     </template>
 
     <template #joke>
-      <div id="my-jokes"></div>
+      <div class="container">
+        <h1 class="text-center">My favorite jokes</h1>
+        <div class="row">
+          <div id="my-jokes" class="col-12"></div>
+        </div>
+      </div>
     </template>
   </AppLayout>
 </template>
@@ -41,7 +46,7 @@ export default {
 
       myJokes.forEach((joke) => {
         console.log(joke);
-        divMyJokes.innerHTML += "<div>" + joke.joke + "</div>";
+        divMyJokes.innerHTML += "<p class='joke'>" + joke.joke + "</p>";
       });
     },
   },

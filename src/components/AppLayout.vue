@@ -2,7 +2,7 @@
   <div class="header">
     <slot name="header"></slot>
   </div>
-  <div class="joke">
+  <div class="content">
     <slot name="joke"></slot>
   </div>
 </template>
