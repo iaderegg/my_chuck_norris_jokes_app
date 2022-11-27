@@ -76,7 +76,7 @@ export default {
           if (response.status == 201) {
             this.$swal({
               icon: "success",
-              iconColor: #995915,
+              iconColor: "#995915",
               text: "The joke was added to favorites successfully",
               toast: true,
             });
