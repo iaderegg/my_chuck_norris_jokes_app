@@ -5,15 +5,15 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      component: import("../components/GetJokes.vue"),
+      component: import("../views/GetJokes.vue"),
     },
     {
       path: "/login",
-      component: import("../components/AppAuth.vue"),
+      component: import("../views/AppAuth.vue"),
     },
     {
       path: "/my-jokes",
-      component: import("../components/MyJokes.vue"),
+      component: import("../views/MyJokes.vue"),
     },
   ],
 });

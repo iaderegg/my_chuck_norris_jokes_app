@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import AppLayout from "./AppLayout.vue";
-import AppHeader from "./AppHeader.vue";
+import AppLayout from "../components/AppLayout.vue";
+import AppHeader from "../components/AppHeader.vue";
 import { store } from "../store";
 import router from "../router";
 import { supabase } from "../supabase";

@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import AppLayout from "./AppLayout.vue";
-import AppHeader from "./AppHeader.vue";
-import Joke from "./Joke/Index.vue";
+import AppLayout from "../components/AppLayout.vue";
+import AppHeader from "../components/AppHeader.vue";
+import Joke from "../components/Joke/Index.vue";
 import { store } from "../store";
 import router from "../router";
 
