@@ -2,7 +2,7 @@
   <main class="container text-center">
     <div class="row">
       <div class="col-8">
-        <p id="joke-text">{{ joketext }}</p>
+        <p id="joke-text" class="joke">{{ joketext }}</p>
       </div>
       <div class="col-4">
         <button
@@ -26,6 +26,7 @@
 
 <script>
 import { supabase } from "../../supabase";
+import VueSweetalert from 'vue-sweetalert2';
 
 export default {
   props: {
@@ -62,12 +63,25 @@ export default {
         .getSession()
         .then((response) => response.data.session);
 
-      const response = await supabase.from("favorite_jokes").insert([
-        {
-          userid: supabaseSession.user.id,
-          joke: document.getElementById("joke-text").innerHTML,
-        },
-      ]);
+      const response = await supabase
+        .from("favorite_jokes")
+        .insert([
+          {
+            userid: supabaseSession.user.id,
+            joke: document.getElementById("joke-text").innerHTML,
+          },
+        ])
+        .then((response) => {
+          console.log(response);
+          if (response.status == 201) {
+            this.$swal({
+              icon: "success",
+              iconColor: #995915,
+              text: "The joke was added to favorites successfully",
+              toast: true,
+            });
+          }
+        });
     },
   },
 };

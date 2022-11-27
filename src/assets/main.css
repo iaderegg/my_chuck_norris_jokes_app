@@ -2,8 +2,14 @@
     background-color: #f9f9f9;
     quotes: "\201C" "\201D" "\2018" "\2019";
     margin: 1.5em 10px;
-    padding: 1em 10px;
+    padding: 2em 2em;
     border-left: 10px solid #ccc;
     text-align: justify;
     font-style: italic;
+}
+
+#button-add-favorite {
+    color: white;
+    margin: 3.5em 6em 3.5em 0em;
+    vertical-align: center;
 }

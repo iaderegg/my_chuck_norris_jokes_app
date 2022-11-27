@@ -45,7 +45,6 @@ export default {
       const divMyJokes = document.getElementById("my-jokes");
 
       myJokes.forEach((joke) => {
-        console.log(joke);
         divMyJokes.innerHTML += "<p class='joke'>" + joke.joke + "</p>";
       });
     },
