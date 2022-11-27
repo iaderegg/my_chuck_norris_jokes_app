@@ -4,12 +4,12 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: "/login",
-      component: import("../components/AppAuth.vue"),
-    },
-    {
       path: "/",
       component: import("../components/GetJokes.vue"),
+    },
+    {
+      path: "/login",
+      component: import("../components/AppAuth.vue"),
     },
     {
       path: "/my-jokes",
