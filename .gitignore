@@ -29,3 +29,6 @@ coverage
 
 # Supabase
 .env
+
+# Local Netlify folder
+.netlify
