@@ -8,6 +8,9 @@
 </template>
 
 <script>
+import { supabase } from "../../supabase";
+import { store } from "../../store";
+
 export default {
   props: {
     joketext: {
@@ -16,15 +19,28 @@ export default {
   },
   methods: {
     async getJoke() {
-      window.console.log("Get Joke");
       const responseText = document.getElementById("joke-text");
 
-      const response = await fetch("https://serverless-functions-cn-jokes.netlify.app/.netlify/functions/get-jokes")
-                              .then(response => response.json())
-                              .catch(e => console.log(e));
+      const accessToken = await supabase.auth
+        .getSession()
+        .then((response) => response.data.session.access_token);
 
-      responseText.innerText = response.data.value;
+      const userData = {
+        access_token: accessToken,
+      };
 
+      console.log(accessToken);
+
+      const response = await fetch(
+        "https://serverless-functions-cn-jokes.netlify.app/.netlify/functions/get-jokes", {
+          method: "POST",
+          body: JSON.stringify(userData),
+        }
+      )
+        .then((response) => response.json())
+        .catch((e) => console.log(e));
+
+        responseText.innerText = response.data.value;
     },
   },
 };
