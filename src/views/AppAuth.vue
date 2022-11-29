@@ -2,7 +2,7 @@
   <div class="text-center">
     <sign-up v-if="isSignUp" />
     <sign-in v-else />
-    <button @click="isSignUp = !isSignUp">
+    <button @click="isSignUp = !isSignUp" class="btn btn btn-outline-dark">
       {{
         isSignUp
           ? "Already have an account? Sign In"

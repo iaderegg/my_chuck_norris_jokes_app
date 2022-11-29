@@ -14,7 +14,7 @@ const router = createRouter({
     {
       path: "/my-jokes",
       component: import("../views/MyJokes.vue"),
-    },
+    }
   ],
 });
 

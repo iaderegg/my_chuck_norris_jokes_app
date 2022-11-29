@@ -1,17 +1,23 @@
 <template>
-  <div>
-    <h2>Sign up for an account</h2>
+  <div id="signup-form">
+    <img src="../assets/logo.png" alt="Logo" />
+    <h2 class="mb-3">Sign up for an account</h2>
     <form @submit.prevent="handleSignup">
-      <div>
-        <label for="email">Email</label>
-        <input id="email" type="email" v-model="email" />
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" type="email" class="form-control" v-model="email" />
       </div>
-      <div>
-        <label for="password">Password</label>
-        <input id="password" type="password" v-model="password" />
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          v-model="password"
+        />
       </div>
-      <div>
-        <button type="submit">Sign up</button>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Sign up</button>
       </div>
     </form>
   </div>
@@ -20,6 +26,7 @@
 <script>
 import { ref } from "vue";
 import { supabase } from "../supabase";
+import router from "../router";
 
 export default {
   setup() {
@@ -34,6 +41,7 @@ export default {
           password: password.value,
         });
         if (error) throw error;
+        router.push("/");
       } catch (error) {
         alert(error.error_description || error.message);
       }
@@ -47,3 +55,9 @@ export default {
   },
 };
 </script>
+
+<style scope>
+#signup-form {
+  padding: 10em 20em 0em 20em;
+}
+</style>

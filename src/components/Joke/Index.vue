@@ -26,7 +26,6 @@
 
 <script>
 import { supabase } from "../../supabase";
-import VueSweetalert from 'vue-sweetalert2';
 
 export default {
   props: {
